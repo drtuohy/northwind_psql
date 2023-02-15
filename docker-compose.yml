@@ -4,6 +4,8 @@ services:
   db:
     container_name: db
     image: postgres:latest
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_DB: northwind
       POSTGRES_USER: postgres
@@ -21,6 +23,8 @@ services:
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
+    ports:
+      - "5432:5432"
     environment:
       PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
       PGADMIN_DEFAULT_PASSWORD: postgres
